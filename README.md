@@ -38,6 +38,12 @@ Please follow this [repo](https://github.com/wesbos/eslint-config-wesbos/) by We
 ### Install dependencies
 
 ```
+### Refer this https://www.npmjs.com/package/alexa-skill-local for usage #####
+
 npm install
 npm install -g alexa-skill-local
 ```
+
+Install ask dependency
+npm install --save ask-sdk
+
