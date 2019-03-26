@@ -15,7 +15,10 @@ Please follow the following steps to setup the project on your local machine
 ### Eslint setup
 
 Please install [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension for VS Code.
-A .eslintrc is already provided in the project repo so just add the following settings to your settings.json file in VS Code.
+A .eslintrc is already provided in the project repo so just add the following settings to your settings.json file() in VS Code.
+You can fin the settings.json file here - 
+On Windows/Linux - File > Preferences > Settings
+On macOS - Code > Preferences > Settings
 
 ```
 // These are all my auto-save configs
