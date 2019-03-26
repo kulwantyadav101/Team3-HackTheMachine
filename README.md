@@ -44,6 +44,5 @@ npm install
 npm install -g alexa-skill-local
 ```
 
-Install ask dependency
-npm install --save ask-sdk
+
 
