@@ -6,6 +6,7 @@ const ErrorHandler = require('./ErrorHandler');
 const GreetMeIntentHandler = require('./GreetMeIntentHandler')
 const EmailIntentHandler = require('./EmailIntentHandler')
 const MobileIntentHandler = require('./MobileIntentHandler')
+const PlaceOrderIntentHandler = require('./PlaceOrderIntentHandler')   
 
 module.exports = {
   LaunchRequestHandler,
