@@ -1,4 +1,7 @@
 asl-config.json
+_tmp/
+config.js
+gitsetup.sh
 
 # Compiled source #
 ###################
