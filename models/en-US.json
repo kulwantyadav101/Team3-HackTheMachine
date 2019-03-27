@@ -20,8 +20,44 @@
           "samples": [
             "hello","get sample audio"
           ]
-        }
-      ]
+        },
+		{
+			"name": "LearnMoreByProduct",
+			"slots": [
+				{
+					"name": "product",
+                    "type": "product"
+				}
+			],
+			"samples": [
+				"tell more about {product}",
+				"tell me more about product {product}",
+				"tell me more about {product} "
+			]
+		}
+      ],
+	  "types": [
+			{
+				"name": "product",
+				"values": [
+					{
+						"name": {
+							"value": "beta"
+						}
+					},
+					{
+						"name": {
+							"value": "gamma"
+						}
+					},
+					{
+						"name": {
+							"value": "alpha"
+						}
+					}
+				]
+			}
+		]
     }
   }
 }

@@ -8,7 +8,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to the Alexa Skills Kit, you can say hello!';
+    const speechText = 'Welcome to the Cyber Hack Inc, you can say learn more about our product Alpha, beta and gamma.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -31,6 +31,22 @@ const HelloWorldIntentHandler = {
       .withSimpleCard('Hello World', speechText)
       .getResponse();
   },
+};
+
+const LearnMoreIntentHandler = {
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+            && handlerInput.requestEnvelope.request.intent.name === 'LearnMoreByProduct';
+    },
+    handle(handlerInput) {
+        let productSlot = handlerInput.requestEnvelope.request.intent.slots['product'];
+        console.log("product found - " + productSlot.value);
+        const speechText = 'Thank you for learning more about our product ' + productSlot.value;
+        return handlerInput.responseBuilder
+            .speak(speechText)
+            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .getResponse();
+    }
 };
 
 const HelpIntentHandler = {
@@ -96,6 +112,7 @@ exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
     HelloWorldIntentHandler,
+	LearnMoreIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler
