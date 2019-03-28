@@ -33,7 +33,7 @@
             "codeUri": "lambda/custom",
             "functionName": "ask-custom-soft-widget-assistant-default",
             "handler": "index.handler",
-            "revisionId": "669eae9a-145d-4959-819c-a2fc138146ac",
+            "revisionId": "b37b024b-831e-4aaf-ad0b-2fab5e9f10b7",
             "runtime": "nodejs8.10"
           }
         ]
