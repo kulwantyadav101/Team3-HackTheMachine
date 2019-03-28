@@ -22,7 +22,7 @@ const LaunchRequestHandler = {
     try {
       const upsServiceClient = serviceClientFactory.getUpsServiceClient();
       const profileName = await upsServiceClient.getProfileName();
-      const greetings = `Hello, ${profileName.split(' ')[0]}. `;
+      const greetings = `Hello ${profileName.split(' ')[0]}. `;
       return responseBuilder
         .speak(greetings + speechText)
         .reprompt(reprompt)

@@ -7,9 +7,6 @@ const {
   HelpIntentHandler,
   CancelAndStopIntentHandler,
   ErrorHandler,
-  GreetMeIntentHandler,
-  EmailIntentHandler,
-  MobileIntentHandler,
   PlaceOrderIntentHandler
 } = require('./intenthandlers')
 
@@ -35,9 +32,6 @@ exports.handler = skillBuilder
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
-    // GreetMeIntentHandler,
-    EmailIntentHandler,
-    MobileIntentHandler,
     PlaceOrderIntentHandler
   )
   .addRequestInterceptors(RequestLog)

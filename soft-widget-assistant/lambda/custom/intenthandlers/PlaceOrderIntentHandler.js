@@ -18,7 +18,6 @@ const PlaceOrderIntentHandler = {
       const upsServiceClient = serviceClientFactory.getUpsServiceClient();
       const profileName = await upsServiceClient.getProfileName();
       const profileEmail = await upsServiceClient.getProfileEmail();
-      const profileMobileObject = await upsServiceClient.getProfileMobileNumber();
       if (!profileEmail) {
         const noEmailResponse = `It looks like you don\'t have an email set. You can set your email from the companion app.`
         return responseBuilder
@@ -26,19 +25,7 @@ const PlaceOrderIntentHandler = {
                       .withSimpleCard(APP_NAME, noEmailResponse)
                       .getResponse();
       }
-      if (!profileMobileObject) {
-        const errorResponse = `It looks like you don\'t have a mobile number set. You can set your mobile number from the companion app.`
-        return responseBuilder
-          .speak(errorResponse)
-          .withSimpleCard(APP_NAME, errorResponse)
-          .getResponse();
-      }
-      const profileMobile = profileMobileObject.phoneNumber;
 
-      // TODO save order to email
-      // Checking if an order already exists
-
-      // If an order does not exist
       if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'DENIED') {
         const orderCancelledResponse = `
           This order will not be created. You can ask me more about "Widget Pro", place an order or manage your existing order.
@@ -50,10 +37,10 @@ const PlaceOrderIntentHandler = {
       } else if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'CONFIRMED') {
         const slots = handlerInput.requestEnvelope.request.intent.slots;
         const userID = handlerInput.requestEnvelope.context.System.user.userId; 
+        const product = slots.product.value
         const userInfo = {
           name: profileName,
-          email: profileEmail,
-          mobile: profileMobile
+          email: profileEmail
         }
         const shippingAddress = {
           streetName: slots.street.value, 
@@ -62,7 +49,7 @@ const PlaceOrderIntentHandler = {
           postalCode: slots.zip.value
         }
         
-        return db.addOrder(userID, userInfo, shippingAddress)
+        return db.addOrder(userID, product, userInfo, shippingAddress)
           .then((data) => {
             console.log('Order saved successfully', data)
             const orderSuccessfulResponse = 'The order has been placed successfully';
