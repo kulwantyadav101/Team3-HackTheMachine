@@ -3,19 +3,17 @@ const HelpIntentHandler = require('./HelpIntentHandler');
 const SessionEndedRequestHandler = require('./SessionEndedRequestHandler');
 const CancelAndStopIntentHandler = require('./CancelAndStopIntentHandler');
 const ErrorHandler = require('./ErrorHandler');
-const GreetMeIntentHandler = require('./GreetMeIntentHandler')
-const EmailIntentHandler = require('./EmailIntentHandler')
-const MobileIntentHandler = require('./MobileIntentHandler')
-const PlaceOrderIntentHandler = require('./PlaceOrderIntentHandler')   
+const PlaceOrderIntentHandler = require('./PlaceOrderIntentHandler')
+const DeleteOrderIntentHandler = require('./DeleteOrderIntentHandler')   
+const EditOrderIntentHandler = require('./EditOrderIntentHandler')
 
 module.exports = {
   LaunchRequestHandler,
+  PlaceOrderIntentHandler,
+  DeleteOrderIntentHandler,
   SessionEndedRequestHandler,
   HelpIntentHandler,
   CancelAndStopIntentHandler,
-  ErrorHandler,
-  GreetMeIntentHandler,
-  EmailIntentHandler,
-  MobileIntentHandler,
-  PlaceOrderIntentHandler
+  EditOrderIntentHandler,
+  ErrorHandler
 };

@@ -48,22 +48,21 @@
           "name": "PlaceOrderIntent",
           "slots": [
             {
-              "name": "street",
-              "type": "AMAZON.StreetAddress",
+              "name": "product",
+              "type": "AMAZON.Service",
               "samples": [
-                "street name is {street}",
-                "I live at {street}",
-                "My street name is {street}",
-                "{street}"
+                "{product}"
               ]
+            },
+            {
+              "name": "street",
+              "type": "AMAZON.StreetAddress"
             },
             {
               "name": "city",
               "type": "AMAZON.US_CITY",
               "samples": [
-                "My city name is {city}",
-                "City is {city}",
-                "City name is {city}",
+                "city is {city}",
                 "{city}"
               ]
             },
@@ -71,7 +70,8 @@
               "name": "state",
               "type": "AMAZON.US_STATE",
               "samples": [
-                "State name is {state}",
+                "state is {state}",
+                "state name is {state}",
                 "{state}"
               ]
             },
@@ -79,21 +79,58 @@
               "name": "zip",
               "type": "AMAZON.PostalAddress",
               "samples": [
+                "zip is {zip}",
+                "zip code is {zip}",
+                "Postal address is {zip}",
                 "{zip}"
               ]
             }
           ],
           "samples": [
-            "New Order",
-            "Order",
-            "Order Widget Pro",
-            "Place an order",
-            "Place an order for Widget Pro",
-            "Purchase Widget Pro",
-            "Buy Widget Pro",
-            "I want to buy Widget Pro",
-            "I want to purchase Widget Pro",
-            "I'd like to place an order"
+            "create order for {product}",
+            "place an order for {product}",
+            "purchase {product}",
+            "buy {product}",
+            "{product}",
+            "order {product}"
+          ]
+        },
+        {
+          "name": "DeleteOrderIntent",
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.Service"
+            }
+          ],
+          "samples": [
+            "remove my last order",
+            "remove order",
+            "delete my order",
+            "delete order",
+            "cancel my order",
+            "cancel my last order",
+            "cancel order for {product}",
+            "remove order for {product}",
+            "delete order for {product}",
+            "delete my last order for {product}"
+          ]
+        },
+        {
+          "name": "EditOrderIntent",
+          "slots": [],
+          "samples": [
+            "change my order",
+            "change order",
+            "update order",
+            "update my order",
+            "edit my order",
+            "edit my last order",
+            "alter my order",
+            "modify my order",
+            "alter my order for widget pro",
+            "modify my order for widget pro",
+            "edit my order for widget pro"
           ]
         }
       ],
@@ -110,12 +147,30 @@
           },
           "slots": [
             {
+              "name": "product",
+              "type": "AMAZON.Service",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.189056022034.1163057285918"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.189056022034.1163057285918.1426029678432",
+                  "values": [
+                    "Widget Pro"
+                  ]
+                }
+              ]
+            },
+            {
               "name": "street",
               "type": "AMAZON.StreetAddress",
               "confirmationRequired": false,
               "elicitationRequired": true,
               "prompts": {
-                "elicitation": "Elicit.Slot.69702743025.1517683176436"
+                "elicitation": "Elicit.Slot.440835757192.882190578458"
               }
             },
             {
@@ -124,7 +179,7 @@
               "confirmationRequired": false,
               "elicitationRequired": true,
               "prompts": {
-                "elicitation": "Elicit.Slot.370680863012.1439544543604"
+                "elicitation": "Elicit.Slot.440835757192.27596837220"
               }
             },
             {
@@ -133,7 +188,7 @@
               "confirmationRequired": false,
               "elicitationRequired": true,
               "prompts": {
-                "elicitation": "Elicit.Slot.370680863012.394646808361"
+                "elicitation": "Elicit.Slot.440835757192.1196343283002"
               }
             },
             {
@@ -142,8 +197,24 @@
               "confirmationRequired": false,
               "elicitationRequired": true,
               "prompts": {
-                "elicitation": "Elicit.Slot.370680863012.222407886769"
+                "elicitation": "Elicit.Slot.440835757192.311206759712"
               }
+            }
+          ]
+        },
+        {
+          "name": "DeleteOrderIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.716768606814"
+          },
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.Service",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
             }
           ]
         }
@@ -193,6 +264,81 @@
           {
             "type": "PlainText",
             "value": "Five digit postal code"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.189056022034.1163057285918",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please select a product. Currently you can only purchase Widget Pro."
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.189056022034.1163057285918.1426029678432",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please specify a valid product. You can only purchase Widget Pro at the moment."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.440835757192.882190578458",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I live at {street}"
+          },
+          {
+            "type": "PlainText",
+            "value": "street name is {street}"
+          },
+          {
+            "type": "PlainText",
+            "value": "{street}"
+          },
+          {
+            "type": "PlainText",
+            "value": "Please provide your street address to place this order."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.440835757192.27596837220",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "City name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.440835757192.1196343283002",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "State name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.440835757192.311206759712",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Five digit postal address"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.716768606814",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure you want to cancel this order?"
           }
         ]
       }

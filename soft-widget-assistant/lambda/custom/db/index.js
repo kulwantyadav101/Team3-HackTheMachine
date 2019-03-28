@@ -5,11 +5,12 @@ const { TABLE_NAME } = require('../utils/constants')
 const db = function () { };
 const docClient = new AWS.DynamoDB.DocumentClient();
 
-db.prototype.addOrder = (userID, userInfo, shippingAddress) => {
+db.prototype.addOrder = (userID, product, userInfo, shippingAddress) => {
   return new Promise((resolve, reject) => {
     const params = {
         TableName: TABLE_NAME,
         Item: {
+          'product': product,
           'userInfo': userInfo,
           'shippingAddress' : shippingAddress,
           'userId': userID

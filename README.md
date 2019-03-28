@@ -60,7 +60,7 @@ ask deploy
 ```
 Easy!
 
-### The final step!
+### Setting up database
 
 For a developer build, you also need to configure your DynamoDB on 
 AWS console. Follow the following steps:
@@ -72,6 +72,9 @@ AWS console. Follow the following steps:
 5. Filter for DynamoDB Policies
 6. For a developer build, we can select AmazonDynamoDBFullAccess policy
 7. Click on Attach Policy
+
+Next, you need to create a table named **sw-orders** with primaryKey as **userId**
+ on the DynamoDB console 
 
 All done!
 
