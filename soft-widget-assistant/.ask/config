@@ -20,7 +20,7 @@
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "1e2940ca00105f6b6e6c42a26c5740e0"
+            "eTag": "9301d4bf17d8a35d0d27b4f2f78eeab1"
           }
         },
         "lambda": [
@@ -33,7 +33,7 @@
             "codeUri": "lambda/custom",
             "functionName": "ask-custom-soft-widget-assistant-default",
             "handler": "index.handler",
-            "revisionId": "b37b024b-831e-4aaf-ad0b-2fab5e9f10b7",
+            "revisionId": "d118607c-7da1-41b5-99b2-6ff188350e44",
             "runtime": "nodejs8.10"
           }
         ]

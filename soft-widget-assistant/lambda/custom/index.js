@@ -1,4 +1,5 @@
 const Alexa = require('ask-sdk');
+const { TABLE_NAME } = require('./utils/constants')
 
 const {
   LaunchRequestHandler,
@@ -24,7 +25,9 @@ const ResponseLog = {
   },
 };
 
-const skillBuilder = Alexa.SkillBuilders.custom();
+const skillBuilder = Alexa.SkillBuilders.standard();
+
+console.log(TABLE_NAME)
 
 exports.handler = skillBuilder
   .addRequestHandlers(
@@ -40,5 +43,6 @@ exports.handler = skillBuilder
   .addRequestInterceptors(RequestLog)
   .addResponseInterceptors(ResponseLog)
   .addErrorHandlers(ErrorHandler)
-  .withApiClient(new Alexa.DefaultApiClient())
+  .withTableName(TABLE_NAME)
+  .withAutoCreateTable(true)
   .lambda();

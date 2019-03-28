@@ -103,6 +103,7 @@
       "intents": [
         {
           "name": "PlaceOrderIntent",
+          "delegationStrategy": "ALWAYS",
           "confirmationRequired": true,
           "prompts": {
             "confirmation": "Confirm.Intent.954754135068"
