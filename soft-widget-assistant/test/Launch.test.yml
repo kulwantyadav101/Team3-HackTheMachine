@@ -1,0 +1,13 @@
+---
+configuration:
+ locales: en-US
+
+---
+- test: Launch the test for Launch skill without utterances
+- LaunchRequest:"Hello there. Welcome to Alexa. you can say greet me!'"
+
+---
+- test: Launch the test for Launch skill with utterances
+- LaunchRequest
+- response.outputSpeech.ssml:"Hello there. Welcome to Alexa. you can say greet me!'"
+---
