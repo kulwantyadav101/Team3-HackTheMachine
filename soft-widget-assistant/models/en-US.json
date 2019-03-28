@@ -1,38 +1,31 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "greeter",
-      "types": [
-
-      ],
+      "invocationName": "softie",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
-          "samples": [
-
-          ]
+          "samples": []
         },
         {
           "name": "AMAZON.HelpIntent",
-          "samples": [
-
-          ]
+          "samples": []
         },
         {
           "name": "AMAZON.StopIntent",
-          "samples": [
-
-          ]
+          "samples": []
         },
         {
           "name": "GreetMeIntent",
-          "samples":[
+          "slots": [],
+          "samples": [
             "greet me",
             "hello"
           ]
         },
         {
           "name": "EmailIntent",
+          "slots": [],
           "samples": [
             "email",
             "what is my email"
@@ -40,13 +33,35 @@
         },
         {
           "name": "MobileIntent",
+          "slots": [],
           "samples": [
             "mobile",
             "mobile number",
             "what is my mobile number"
           ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "PlaceOrderIntent",
+          "slots": [],
+          "samples": [
+            "New Order",
+            "Order",
+            "Order Widget Pro",
+            "Place an order",
+            "Place an order for Widget Pro",
+            "Purchase Widget Pro",
+            "Buy Widget Pro",
+            "I want to buy Widget Pro",
+            "I want to purchase Widget Pro",
+            "I'd like to place an order"
+          ]
         }
-      ]
+      ],
+      "types": []
     }
   }
 }

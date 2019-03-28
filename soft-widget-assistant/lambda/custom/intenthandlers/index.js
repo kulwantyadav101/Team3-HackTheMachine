@@ -16,5 +16,6 @@ module.exports = {
   ErrorHandler,
   GreetMeIntentHandler,
   EmailIntentHandler,
-  MobileIntentHandler
+  MobileIntentHandler,
+  PlaceOrderIntentHandler
 };

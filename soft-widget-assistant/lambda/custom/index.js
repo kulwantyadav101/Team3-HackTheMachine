@@ -29,12 +29,12 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
-    GreetMeIntentHandler,
-    EmailIntentHandler,
-    MobileIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
+    // GreetMeIntentHandler,
+    EmailIntentHandler,
+    MobileIntentHandler,
     PlaceOrderIntentHandler
   )
   .addRequestInterceptors(RequestLog)

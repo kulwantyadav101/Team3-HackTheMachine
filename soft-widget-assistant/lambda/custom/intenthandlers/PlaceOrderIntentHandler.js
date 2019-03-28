@@ -4,6 +4,7 @@ const {
 } = require('../utils/constants')
 
 const messages = require('../utils/messages')
+const db = require('../db')
 
 const PlaceOrderIntentHandler = {
   canHandle(handlerInput) {
@@ -11,6 +12,10 @@ const PlaceOrderIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'PlaceOrderIntent';
   },
   async handle(handlerInput) {
+    return responseBuilder.speak('Order succesful')
+    .withSimpleCard(APP_NAME, 'Order succesful')
+    .getResponse();
+
     const { serviceClientFactory, responseBuilder } = handlerInput;
     try {
       const upsServiceClient = serviceClientFactory.getUpsServiceClient();
@@ -25,8 +30,15 @@ const PlaceOrderIntentHandler = {
       }
 
       // place an order
-      
+      db.get('orders')
+        .push({
+          email: phoneEmail,
+          name: profileName,
+          date: new Date()
+        })
 
+      const speechResponse = 'Your order has been placed successfully'
+      
       return responseBuilder
                       .speak(speechResponse)
                       .withSimpleCard(APP_NAME, speechResponse)
