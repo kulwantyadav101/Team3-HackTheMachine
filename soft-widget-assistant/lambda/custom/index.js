@@ -7,7 +7,8 @@ const {
   HelpIntentHandler,
   CancelAndStopIntentHandler,
   ErrorHandler,
-  PlaceOrderIntentHandler
+  PlaceOrderIntentHandler,
+  DeleteOrderIntentHandler
 } = require('./intenthandlers')
 
 const RequestLog = {
@@ -29,10 +30,11 @@ console.log(TABLE_NAME)
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
+    PlaceOrderIntentHandler,
+    DeleteOrderIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
-    PlaceOrderIntentHandler
   )
   .addRequestInterceptors(RequestLog)
   .addResponseInterceptors(ResponseLog)
