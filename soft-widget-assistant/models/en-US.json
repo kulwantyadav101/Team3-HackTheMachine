@@ -115,6 +115,23 @@
             "delete order for {product}",
             "delete my last order for {product}"
           ]
+        },
+        {
+          "name": "EditOrderIntent",
+          "slots": [],
+          "samples": [
+            "change my order",
+            "change order",
+            "update order",
+            "update my order",
+            "edit my order",
+            "edit my last order",
+            "alter my order",
+            "modify my order",
+            "alter my order for widget pro",
+            "modify my order for widget pro",
+            "edit my order for widget pro"
+          ]
         }
       ],
       "types": []
