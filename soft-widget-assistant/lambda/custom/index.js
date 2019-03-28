@@ -6,6 +6,7 @@ const {
   SessionEndedRequestHandler,
   HelpIntentHandler,
   CancelAndStopIntentHandler,
+  EditOrderIntentHandler,
   ErrorHandler,
   PlaceOrderIntentHandler,
   DeleteOrderIntentHandler
@@ -32,6 +33,7 @@ exports.handler = skillBuilder
     LaunchRequestHandler,
     PlaceOrderIntentHandler,
     DeleteOrderIntentHandler,
+    EditOrderIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
