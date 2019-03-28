@@ -4,8 +4,6 @@ const {
 
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
-    console.log('xxxxxxxxx')
-    console.log(handlerInput)
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
 
