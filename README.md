@@ -8,11 +8,11 @@
 - [Sonali Chawla](https://github.com/sonalichawla16)
 - [Shivam Rastogi](https://github.com/shivamras304)
 
-## Project Setup - Local
+## Project Setup
 
-Please follow the following steps to setup the project on your local machine
+Please follow the following steps to setup the project
 
-### Eslint setup
+### Eslint setup (Only for development)
 
 Please install [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension for VS Code.
 A .eslintrc is already provided in the project repo so just add the following settings to your settings.json file in VS Code.
@@ -39,10 +39,43 @@ Please follow this [repo](https://github.com/wesbos/eslint-config-wesbos/) by We
 
 ```
 npm install
-npm install -g alexa-skill-local
 ```
 
-## **How to setup and run Unit Test scripts**
+### Install ask-cli
+
+You will need an [Amazon Developer Account](https://developer.amazon.com/) 
+and [AWS Credentials](https://developer.amazon.com/docs/smapi/manage-credentials-with-ask-cli.html#create-aws-credentials)
+to install ask-cli. Install and initialize ask-cli on your machine using the instructions 
+on the [official documentation](https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html).
+
+### Deploying the app
+
+Make sure you run the following command in the same directory as the skill.json file
+```
+cd soft-widget-assistant
+ask deploy
+```
+Easy!
+
+### The final step!
+
+For a developer build, you also need to configure your DynamoDB on 
+AWS console. Follow the following steps:
+
+1. Open the IAM console
+2. Go to Roles tab from the sidebar
+3. Click on the role name for your app. (Should be ask-lambda-soft-widget-assistant)
+4. Click on Attach Policies
+5. Filter for DynamoDB Policies
+6. For a developer build, we can select AmazonDynamoDBFullAccess policy
+7. Click on Attach Policy
+
+All done!
+
+Follow the next steps if you're interested in
+running unit tests as well.
+
+## Setup and run Unit Test scripts
 To get started, you need to install Bespoken Tools, please follow the next steps:
 1. Install Bespoken Tools by running `npm install -g bespoken-tools` on your command line.
 2. Create the main testing folder. We recommend to name it `test`; it should be under the root of your skill's directory.
