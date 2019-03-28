@@ -21,9 +21,9 @@ const PlaceOrderIntentHandler = {
       if (!profileEmail) {
         const noEmailResponse = `It looks like you don\'t have an email set. You can set your email from the companion app.`
         return responseBuilder
-                      .speak(noEmailResponse)
-                      .withSimpleCard(APP_NAME, noEmailResponse)
-                      .getResponse();
+          .speak(noEmailResponse)
+          .withSimpleCard(APP_NAME, noEmailResponse)
+          .getResponse();
       }
 
       if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'DENIED') {

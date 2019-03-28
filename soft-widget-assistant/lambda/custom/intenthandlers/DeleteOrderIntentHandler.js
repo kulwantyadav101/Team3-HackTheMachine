@@ -1,9 +1,3 @@
-const {
-  APP_NAME,
-  FULL_NAME_PERMISSION
-} = require('../utils/constants')
-
-const messages = require('../utils/messages')
 const db = require('../db')
 
 const DeleteOrderIntentHandler = {
@@ -16,23 +10,31 @@ const DeleteOrderIntentHandler = {
     const { responseBuilder } = handlerInput;
     const userID = handlerInput.requestEnvelope.context.System.user.userId; 
 
-    return db.removeOrder(userID)
-      .then((data) => {
-        console.log('Deleted order: ' + data)
-        const orderCancelledResponse = 'The order has been cancelled successfully';
-        return responseBuilder
-          .speak(orderCancelledResponse)
-          .reprompt(orderCancelledResponse)
-          .getResponse();
-      })
-      .catch((err) => {
-        console.log("Error occured while deleting order", err);
-        const orderNotDeletedResponse = "There is no existing order to delete."
-        return responseBuilder
-          .speak(orderNotDeletedResponse)
-          .reprompt(orderNotDeletedResponse)
-          .getResponse();
-      })
+    if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'DENIED') {
+      const response = "The order won't be cancelled"
+      return responseBuilder
+        .speak(response)
+        .reprompt(response)
+        .getResponse();
+    } else if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'CONFIRMED') {
+      return db.removeOrder(userID)
+        .then((data) => {
+          console.log('Deleted order: ' + data)
+          const orderCancelledResponse = 'The order has been cancelled successfully';
+          return responseBuilder
+            .speak(orderCancelledResponse)
+            .reprompt(orderCancelledResponse)
+            .getResponse();
+        })
+        .catch((err) => {
+          console.log("Error occured while deleting order", err);
+          const orderNotDeletedResponse = "There is no existing order to delete."
+          return responseBuilder
+            .speak(orderNotDeletedResponse)
+            .reprompt(orderNotDeletedResponse)
+            .getResponse();
+        })
+    }
   },
 }
 

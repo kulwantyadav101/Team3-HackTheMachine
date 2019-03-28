@@ -24,23 +24,6 @@
           ]
         },
         {
-          "name": "EmailIntent",
-          "slots": [],
-          "samples": [
-            "email",
-            "what is my email"
-          ]
-        },
-        {
-          "name": "MobileIntent",
-          "slots": [],
-          "samples": [
-            "mobile",
-            "mobile number",
-            "what is my mobile number"
-          ]
-        },
-        {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
         },
@@ -114,6 +97,18 @@
             "remove order for {product}",
             "delete order for {product}",
             "delete my last order for {product}"
+          ]
+        },
+        {
+          "name": "EditOrderIntent",
+          "slots": [],
+          "samples": [
+            "edit my order",
+            "alter my order",
+            "modify my order",
+            "alter my order for widget pro",
+            "modify my order for widget pro",
+            "edit my order for widget pro"
           ]
         }
       ],

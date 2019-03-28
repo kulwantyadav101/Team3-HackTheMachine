@@ -8,7 +8,8 @@ const {
   CancelAndStopIntentHandler,
   ErrorHandler,
   PlaceOrderIntentHandler,
-  DeleteOrderIntentHandler
+  DeleteOrderIntentHandler,
+  EditOrderIntentHandler
 } = require('./intenthandlers')
 
 const RequestLog = {
@@ -32,6 +33,7 @@ exports.handler = skillBuilder
     LaunchRequestHandler,
     PlaceOrderIntentHandler,
     DeleteOrderIntentHandler,
+    EditOrderIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
