@@ -94,6 +94,27 @@
             "{product}",
             "order {product}"
           ]
+        },
+        {
+          "name": "DeleteOrderIntent",
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.Service"
+            }
+          ],
+          "samples": [
+            "remove my last order",
+            "remove order",
+            "delete my order",
+            "delete order",
+            "cancel my order",
+            "cancel my last order",
+            "cancel order for {product}",
+            "remove order for {product}",
+            "delete order for {product}",
+            "delete my last order for {product}"
+          ]
         }
       ],
       "types": []
@@ -163,6 +184,22 @@
               }
             }
           ]
+        },
+        {
+          "name": "DeleteOrderIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.716768606814"
+          },
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.Service",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            }
+          ]
         }
       ],
       "delegationStrategy": "ALWAYS"
@@ -218,7 +255,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Please select a product. You can only purchase Widget Pro at the moment."
+            "value": "Please select a product. Currently you can only purchase Widget Pro."
           }
         ]
       },
@@ -276,6 +313,15 @@
           {
             "type": "PlainText",
             "value": "Five digit postal address"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.716768606814",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure you want to cancel this order?"
           }
         ]
       }
