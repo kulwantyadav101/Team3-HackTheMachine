@@ -1,4 +1,5 @@
 const Alexa = require('ask-sdk');
+const { TABLE_NAME } = require('./utils/constants')
 
 const {
   LaunchRequestHandler,
@@ -8,7 +9,8 @@ const {
   ErrorHandler,
   GreetMeIntentHandler,
   EmailIntentHandler,
-  MobileIntentHandler
+  MobileIntentHandler,
+  PlaceOrderIntentHandler
 } = require('./intenthandlers')
 
 const RequestLog = {
@@ -23,20 +25,24 @@ const ResponseLog = {
   },
 };
 
-const skillBuilder = Alexa.SkillBuilders.custom();
+const skillBuilder = Alexa.SkillBuilders.standard();
+
+console.log(TABLE_NAME)
 
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
-    GreetMeIntentHandler,
-    EmailIntentHandler,
-    MobileIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
-    SessionEndedRequestHandler
+    SessionEndedRequestHandler,
+    // GreetMeIntentHandler,
+    EmailIntentHandler,
+    MobileIntentHandler,
+    PlaceOrderIntentHandler
   )
   .addRequestInterceptors(RequestLog)
   .addResponseInterceptors(ResponseLog)
   .addErrorHandlers(ErrorHandler)
-  .withApiClient(new Alexa.DefaultApiClient())
+  .withTableName(TABLE_NAME)
+  .withAutoCreateTable(true)
   .lambda();

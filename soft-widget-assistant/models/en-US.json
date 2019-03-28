@@ -1,38 +1,31 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "greeter",
-      "types": [
-
-      ],
+      "invocationName": "softie",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
-          "samples": [
-
-          ]
+          "samples": []
         },
         {
           "name": "AMAZON.HelpIntent",
-          "samples": [
-
-          ]
+          "samples": []
         },
         {
           "name": "AMAZON.StopIntent",
-          "samples": [
-
-          ]
+          "samples": []
         },
         {
           "name": "GreetMeIntent",
-          "samples":[
+          "slots": [],
+          "samples": [
             "greet me",
             "hello"
           ]
         },
         {
           "name": "EmailIntent",
+          "slots": [],
           "samples": [
             "email",
             "what is my email"
@@ -40,13 +33,169 @@
         },
         {
           "name": "MobileIntent",
+          "slots": [],
           "samples": [
             "mobile",
             "mobile number",
             "what is my mobile number"
           ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "PlaceOrderIntent",
+          "slots": [
+            {
+              "name": "street",
+              "type": "AMAZON.StreetAddress",
+              "samples": [
+                "street name is {street}",
+                "I live at {street}",
+                "My street name is {street}",
+                "{street}"
+              ]
+            },
+            {
+              "name": "city",
+              "type": "AMAZON.US_CITY",
+              "samples": [
+                "My city name is {city}",
+                "City is {city}",
+                "City name is {city}",
+                "{city}"
+              ]
+            },
+            {
+              "name": "state",
+              "type": "AMAZON.US_STATE",
+              "samples": [
+                "State name is {state}",
+                "{state}"
+              ]
+            },
+            {
+              "name": "zip",
+              "type": "AMAZON.PostalAddress",
+              "samples": [
+                "{zip}"
+              ]
+            }
+          ],
+          "samples": [
+            "New Order",
+            "Order",
+            "Order Widget Pro",
+            "Place an order",
+            "Place an order for Widget Pro",
+            "Purchase Widget Pro",
+            "Buy Widget Pro",
+            "I want to buy Widget Pro",
+            "I want to purchase Widget Pro",
+            "I'd like to place an order"
+          ]
         }
-      ]
-    }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "PlaceOrderIntent",
+          "delegationStrategy": "ALWAYS",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.954754135068"
+          },
+          "slots": [
+            {
+              "name": "street",
+              "type": "AMAZON.StreetAddress",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.69702743025.1517683176436"
+              }
+            },
+            {
+              "name": "city",
+              "type": "AMAZON.US_CITY",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.370680863012.1439544543604"
+              }
+            },
+            {
+              "name": "state",
+              "type": "AMAZON.US_STATE",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.370680863012.394646808361"
+              }
+            },
+            {
+              "name": "zip",
+              "type": "AMAZON.PostalAddress",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.370680863012.222407886769"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.954754135068",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Your shipping address is {street} ,  {city} ,  {state} , {zip} . Your order total is fifty dollars. Do you confirm this order?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.69702743025.1517683176436",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please provide your street address to place this order."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.370680863012.1439544543604",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "City name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.370680863012.394646808361",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "State name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.370680863012.222407886769",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Five digit postal code"
+          }
+        ]
+      }
+    ]
   }
 }

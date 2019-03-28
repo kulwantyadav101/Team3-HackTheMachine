@@ -5,25 +5,26 @@
         "en-US": {
           "summary": "Sample Short Description",
           "examplePhrases": [
-            "Alexa open greeter",
-            "Alexa tell greeter hello",
-            "Alexa ask greeter to greet me"
+            "Alexa open soft widget assistant",
+            "Alexa launch soft widget assistant",
+            "Alexa ask soft widget assistant to tell me more about Widget Pro"
           ],
           "name": "soft-widget-assistant",
-          "description": "A starter template for Alexa skill that uses the Customer Profile API",
+          "description": "A smart assistant for Soft Widget Incorporated to place or manage orders",
           "smallIconUri": "https://s3.amazonaws.com/cdn.dabblelab.com/img/skill-template-default-sm.png",
           "largeIconUri": "https://s3.amazonaws.com/cdn.dabblelab.com/img/skill-template-default-lg.png"
         }
       },
       "isAvailableWorldwide": true,
       "testingInstructions": "Sample Testing Instructions.",
-      "category": "EDUCATION_AND_REFERENCE",
+      "category": "SHOPPING",
       "distributionCountries": []
     },
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "lambda/custom"
+          "sourceDir": "lambda/custom",
+          "uri": "ask-custom-soft-widget-assistant-default"
         }
       }
     },
