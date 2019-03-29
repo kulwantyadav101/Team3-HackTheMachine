@@ -1,4 +1,7 @@
 const db = require('../db')
+const {
+  APP_NAME
+} = require('../utils/constants')
 
 const EditOrderIntentHandler = {
   canHandle(handlerInput) {
@@ -26,6 +29,7 @@ const EditOrderIntentHandler = {
         return responseBuilder
           .speak(editOrderResponse)
           .reprompt(editOrderResponse)
+          .withSimpleCard(APP_NAME, editOrderResponse)
           .getResponse();
       })
       .catch((err) => {
@@ -34,6 +38,7 @@ const EditOrderIntentHandler = {
         return responseBuilder
           .speak(editOrderResponse)
           .reprompt(editOrderResponse)
+          .withSimpleCard(APP_NAME, editOrderResponse)
           .getResponse();
       })
   },

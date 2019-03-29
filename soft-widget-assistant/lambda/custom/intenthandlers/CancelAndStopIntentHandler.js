@@ -1,3 +1,7 @@
+const {
+  APP_NAME
+} = require('../utils/constants')
+
 const CancelAndStopIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -9,7 +13,7 @@ const CancelAndStopIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard(APP_NAME, speechText)
       .getResponse();
   },
 };

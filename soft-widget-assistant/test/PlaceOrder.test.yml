@@ -1,0 +1,22 @@
+---
+configuration:
+ locales: en-US
+
+---
+
+---
+- test: Launch the test for Place order skill without utterances
+- PlaceOrderIntent
+- response.outputspeech.ssml:"It looks like you don't have an email set. You can set your email from the companion app."
+---
+---
+- test: Launch the test for Place order skill without utterances and with status as denied
+- PlaceOrderIntent
+- prompt:"This order will not be created. You can ask me more about Widget Pro, place an order or manage your existing order."
+
+---
+---
+- test: Launch the test for Place order skill without utterances and with status as confirmed
+- PlaceOrderIntent
+- prompt:"Your order has been placed successfully"
+---  

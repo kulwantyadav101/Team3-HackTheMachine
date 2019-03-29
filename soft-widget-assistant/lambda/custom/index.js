@@ -1,20 +1,23 @@
 const Alexa = require('ask-sdk');
-const { TABLE_NAME } = require('./utils/constants')
+const { TABLE_NAME } = require('./utils/constants');
 
 const {
   LaunchRequestHandler,
+  ProductInformationIntentHandler,
   SessionEndedRequestHandler,
   HelpIntentHandler,
   CancelAndStopIntentHandler,
   EditOrderIntentHandler,
   ErrorHandler,
   PlaceOrderIntentHandler,
-  DeleteOrderIntentHandler
-} = require('./intenthandlers')
+  DeleteOrderIntentHandler,
+} = require('./intenthandlers');
 
 const RequestLog = {
   process(handlerInput) {
-    console.log(`REQUEST ENVELOPE = ${JSON.stringify(handlerInput.requestEnvelope)}`);
+    console.log(
+      `REQUEST ENVELOPE = ${JSON.stringify(handlerInput.requestEnvelope)}`
+    );
   },
 };
 
@@ -26,17 +29,18 @@ const ResponseLog = {
 
 const skillBuilder = Alexa.SkillBuilders.standard();
 
-console.log(TABLE_NAME)
+console.log(TABLE_NAME);
 
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
+    ProductInformationIntentHandler,
     PlaceOrderIntentHandler,
     DeleteOrderIntentHandler,
     EditOrderIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
-    SessionEndedRequestHandler,
+    SessionEndedRequestHandler
   )
   .addRequestInterceptors(RequestLog)
   .addResponseInterceptors(ResponseLog)

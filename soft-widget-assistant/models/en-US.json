@@ -16,31 +16,6 @@
           "samples": []
         },
         {
-          "name": "GreetMeIntent",
-          "slots": [],
-          "samples": [
-            "greet me",
-            "hello"
-          ]
-        },
-        {
-          "name": "EmailIntent",
-          "slots": [],
-          "samples": [
-            "email",
-            "what is my email"
-          ]
-        },
-        {
-          "name": "MobileIntent",
-          "slots": [],
-          "samples": [
-            "mobile",
-            "mobile number",
-            "what is my mobile number"
-          ]
-        },
-        {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
         },
@@ -51,6 +26,9 @@
               "name": "product",
               "type": "AMAZON.Service",
               "samples": [
+                "place an order for {product} ",
+                "purchase {product}",
+                "buy {product}",
                 "{product}"
               ]
             },
@@ -84,57 +62,239 @@
                 "Postal address is {zip}",
                 "{zip}"
               ]
+            },
+            {
+              "name": "I_Want",
+              "type": "iSubjectType"
+            },
+            {
+              "name": "article",
+              "type": "ArticleType"
             }
           ],
           "samples": [
-            "create order for {product}",
-            "place an order for {product}",
+            "{I_Want} create order",
+            "{I_Want} place order",
+            "{I_Want} create {article} order",
+            "{I_Want} place {article} order",
+            "create order",
+            "place order",
+            "create {article} order",
+            "place {article} order",
+            "place order {article} {product}",
+            "place {article} order {article} {product}",
             "purchase {product}",
+            "order {product}",
             "buy {product}",
-            "{product}",
-            "order {product}"
+            "{I_Want} order {product}",
+            "{I_Want} create {article} order {article} {product}",
+            "{I_Want} place {article} order {article} {product}",
+            "{I_Want} purchase {product}",
+            "{I_Want} buy {product}"
           ]
         },
         {
           "name": "DeleteOrderIntent",
           "slots": [
             {
-              "name": "product",
-              "type": "AMAZON.Service"
+              "name": "I_Want",
+              "type": "iSubjectType"
+            },
+            {
+              "name": "article",
+              "type": "ArticleType"
             }
           ],
           "samples": [
-            "remove my last order",
-            "remove order",
-            "delete my order",
+            "cancel {article} order",
+            "delete {article} order",
+            "{I_Want} delete {article} last order",
+            "{I_Want} cancel {article} last order",
+            "{I_Want} cancel {article} order",
+            "{I_Want} delete {article} order",
             "delete order",
-            "cancel my order",
-            "cancel my last order",
-            "cancel order for {product}",
-            "remove order for {product}",
-            "delete order for {product}",
-            "delete my last order for {product}"
+            "cancel order"
           ]
         },
         {
           "name": "EditOrderIntent",
-          "slots": [],
+          "slots": [
+            {
+              "name": "I_Want",
+              "type": "iSubjectType"
+            },
+            {
+              "name": "article",
+              "type": "ArticleType"
+            }
+          ],
           "samples": [
-            "change my order",
-            "change order",
-            "update order",
-            "update my order",
-            "edit my order",
-            "edit my last order",
-            "alter my order",
-            "modify my order",
-            "alter my order for widget pro",
-            "modify my order for widget pro",
-            "edit my order for widget pro"
+            "modify {article} order",
+            "edit {article} order",
+            "{I_Want} modify {article} order",
+            "{I_Want} edit {article} order",
+            "{I_Want} modify order",
+            "{I_Want} edit order",
+            "edit order",
+            "modiy order"
+          ]
+        },
+        {
+          "name": "ProductInformationIntent",
+          "slots": [
+            {
+              "name": "know",
+              "type": "Knowledge"
+            },
+            {
+              "name": "I_Want",
+              "type": "iSubjectType"
+            },
+            {
+              "name": "productName",
+              "type": "ProductType"
+            }
+          ],
+          "samples": [
+            "{I_Want} {know} of {productName}",
+            "{I_Want} {know} product",
+            "{I_Want} {know} ",
+            "{I_Want} {know} {productName}"
           ]
         }
       ],
-      "types": []
+      "types": [
+        {
+          "name": "iSubjectType",
+          "values": [
+            {
+              "name": {
+                "value": "give me"
+              }
+            },
+            {
+              "name": {
+                "value": "tell me more"
+              }
+            },
+            {
+              "name": {
+                "value": "tell me"
+              }
+            },
+            {
+              "name": {
+                "value": "i'd like to"
+              }
+            },
+            {
+              "name": {
+                "value": "I would like to"
+              }
+            },
+            {
+              "name": {
+                "value": "I want to"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ArticleType",
+          "values": [
+            {
+              "name": {
+                "value": "my"
+              }
+            },
+            {
+              "name": {
+                "value": "of"
+              }
+            },
+            {
+              "name": {
+                "value": "for"
+              }
+            },
+            {
+              "name": {
+                "value": "the"
+              }
+            },
+            {
+              "name": {
+                "value": "an "
+              }
+            },
+            {
+              "name": {
+                "value": "a"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Knowledge",
+          "values": [
+            {
+              "name": {
+                "value": "more details about"
+              }
+            },
+            {
+              "name": {
+                "value": "details about"
+              }
+            },
+            {
+              "name": {
+                "value": "details of"
+              }
+            },
+            {
+              "name": {
+                "value": "more about"
+              }
+            },
+            {
+              "name": {
+                "value": "about functionalities of"
+              }
+            },
+            {
+              "name": {
+                "value": "about"
+              }
+            },
+            {
+              "name": {
+                "value": "know more about"
+              }
+            },
+            {
+              "name": {
+                "value": "to know about"
+              }
+            },
+            {
+              "name": {
+                "value": "know about"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ProductType",
+          "values": [
+            {
+              "name": {
+                "value": "Widget Pro"
+              }
+            }
+          ]
+        }
+      ]
     },
     "dialog": {
       "intents": [
@@ -159,6 +319,8 @@
                   "type": "isInSet",
                   "prompt": "Slot.Validation.189056022034.1163057285918.1426029678432",
                   "values": [
+                    "widget",
+                    "widget pro",
                     "Widget Pro"
                   ]
                 }
@@ -199,6 +361,20 @@
               "prompts": {
                 "elicitation": "Elicit.Slot.440835757192.311206759712"
               }
+            },
+            {
+              "name": "I_Want",
+              "type": "iSubjectType",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "article",
+              "type": "ArticleType",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
             }
           ]
         },
@@ -210,8 +386,15 @@
           },
           "slots": [
             {
-              "name": "product",
-              "type": "AMAZON.Service",
+              "name": "I_Want",
+              "type": "iSubjectType",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "article",
+              "type": "ArticleType",
               "confirmationRequired": false,
               "elicitationRequired": false,
               "prompts": {}
@@ -272,7 +455,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Please select a product. Currently you can only purchase Widget Pro."
+            "value": "Please select a product. Currently you can only purchase widget pro."
           }
         ]
       },
@@ -329,7 +512,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Five digit postal address"
+            "value": "Five digit postal code"
           }
         ]
       },
@@ -338,7 +521,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Are you sure you want to cancel this order?"
+            "value": "Are you sure you want to cancel the last order?"
           }
         ]
       }
