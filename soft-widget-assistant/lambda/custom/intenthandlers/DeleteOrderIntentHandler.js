@@ -18,7 +18,7 @@ const DeleteOrderIntentHandler = {
       return responseBuilder
         .speak(response)
         .reprompt(response)
-        .withSimpleCard(APP_NAME, response)
+        .withSimpleCard(APP_NAME, response) 
         .getResponse();
     } else if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'CONFIRMED') {
       return db.removeOrder(userID)
