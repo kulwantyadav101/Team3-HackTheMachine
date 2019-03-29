@@ -35,7 +35,7 @@ const LaunchRequestHandler = {
         return responseBuilder
           .speak(speechText)
           .reprompt(reprompt)
-          .withSimpleCard(APP_NAME, greetings + speechText)
+          .withSimpleCard(APP_NAME, speechText)
           .getResponse();
       }
       const response = responseBuilder.speak(messages.ERROR).getResponse();
