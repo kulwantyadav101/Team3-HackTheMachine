@@ -1,0 +1,15 @@
+---
+configuration:
+ locales: en-US
+
+---
+
+---
+- test: Launch test for Amazon help skill
+- EditOrderIntent: "There is no existing order to modify."
+---
+---
+- test: Launch test for Amazon help skill
+- EditOrderIntent
+- prompt: "Please cancel your existing order and place a new order if necessary."
+---

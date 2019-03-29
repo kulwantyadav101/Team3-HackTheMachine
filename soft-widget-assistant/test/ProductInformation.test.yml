@@ -1,0 +1,9 @@
+---
+configuration:
+ locales: en-US
+---
+
+---
+- test: Launch test for Product Information skill
+- ProductInformationIntent: "Thank you inquiring about our product."
+---
