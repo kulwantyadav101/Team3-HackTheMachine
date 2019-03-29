@@ -95,6 +95,16 @@
             "I want to purchase Widget Pro",
             "I'd like to place an order"
           ]
+        },
+        {
+          "name": "ProductInformationIntent",
+          "slots": [],
+          "samples": [
+              "tell me more about widget pro",
+              "tell me more fucntionalities of produts",
+              "give me more details of product",
+              "tell me more about product"
+          ]
         }
       ],
       "types": []

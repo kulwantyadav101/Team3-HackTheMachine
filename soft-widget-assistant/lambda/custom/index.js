@@ -3,6 +3,7 @@ const { TABLE_NAME } = require('./utils/constants')
 
 const {
   LaunchRequestHandler,
+  ProductInformationIntentHandler,
   SessionEndedRequestHandler,
   HelpIntentHandler,
   CancelAndStopIntentHandler,
@@ -32,6 +33,7 @@ console.log(TABLE_NAME)
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
+    ProductInformationIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,

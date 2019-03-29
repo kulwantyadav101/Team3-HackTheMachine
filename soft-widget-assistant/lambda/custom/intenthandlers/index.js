@@ -7,9 +7,11 @@ const GreetMeIntentHandler = require('./GreetMeIntentHandler')
 const EmailIntentHandler = require('./EmailIntentHandler')
 const MobileIntentHandler = require('./MobileIntentHandler')
 const PlaceOrderIntentHandler = require('./PlaceOrderIntentHandler')   
+const ProductInformationIntentHandler = require('./ProductInformationIntentHandler')
 
 module.exports = {
   LaunchRequestHandler,
+  ProductInformationIntentHandler,
   SessionEndedRequestHandler,
   HelpIntentHandler,
   CancelAndStopIntentHandler,
