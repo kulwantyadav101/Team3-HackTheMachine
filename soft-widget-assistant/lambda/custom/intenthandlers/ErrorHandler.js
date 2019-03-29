@@ -1,3 +1,7 @@
+const {
+  APP_NAME
+} = require('../utils/constants')
+
 const ErrorHandler = {
   canHandle() {
     return true;

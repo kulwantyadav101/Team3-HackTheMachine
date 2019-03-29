@@ -55,6 +55,7 @@ const PlaceOrderIntentHandler = {
             const orderSuccessfulResponse = 'The order has been placed successfully.';
             return responseBuilder
               .speak(orderSuccessfulResponse)
+              .reprompt(orderSuccessfulResponse)
               .getResponse();
           })
           .catch((err) => {
@@ -62,6 +63,7 @@ const PlaceOrderIntentHandler = {
             const orderNotSavedResponse = "We cannot create your right now. Please try again!"
             return responseBuilder
               .speak(orderNotSavedResponse)
+              .reprompt(orderNotSavedResponse)
               .getResponse();
           })
       }

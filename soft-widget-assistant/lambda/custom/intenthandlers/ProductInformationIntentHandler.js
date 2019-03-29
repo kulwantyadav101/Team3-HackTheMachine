@@ -1,19 +1,27 @@
+const {
+  APP_NAME
+} = require('../utils/constants')
 
 const ProductInformationIntentHandler = {
     canHandle(handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'IntentRequest'
         && (handlerInput.requestEnvelope.request.intent.name === 'ProductInformationIntent');
     },
-    async handle(handlerInput) {
-      const speechText = `Thank you inquiring about our product . here is the details."Widget Pro" is having Rock-solid audio engagement.  It is having Silver-bullet touch response system.`;
+    handle(handlerInput) {
+      const speechText = `
+        Widget Pro a revolutionary house-hold product everyone wants. 
+        It features a sleek casing with intuitive features. Features include.
+        Rock-solid audio engagement.
+        Silver-bullet touch response system.
+        Long lasting rechargeable battery.
+      `;
   
       return handlerInput.responseBuilder
         .speak(speechText)
-        .withSimpleCard(speechText)
+        .reprompt(speechText)
+        .withSimpleCard(APP_NAME, speechText)
         .getResponse();
-
-        await SVGPathSegClosePath(3000);
     },
   };
   
-  module.exports = ProductInformationIntentHandler; 
+  module.exports = ProductInformationIntentHandler;

@@ -1,4 +1,7 @@
 const db = require('../db')
+const {
+  APP_NAME
+} = require('../utils/constants')
 
 const DeleteOrderIntentHandler = {
   canHandle(handlerInput) {
@@ -15,6 +18,7 @@ const DeleteOrderIntentHandler = {
       return responseBuilder
         .speak(response)
         .reprompt(response)
+        .withSimpleCard(APP_NAME, response)
         .getResponse();
     } else if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'CONFIRMED') {
       return db.removeOrder(userID)
@@ -24,6 +28,7 @@ const DeleteOrderIntentHandler = {
           return responseBuilder
             .speak(orderCancelledResponse)
             .reprompt(orderCancelledResponse)
+            .withSimpleCard(APP_NAME, orderCancelledResponse)
             .getResponse();
         })
         .catch((err) => {
@@ -32,6 +37,7 @@ const DeleteOrderIntentHandler = {
           return responseBuilder
             .speak(orderNotDeletedResponse)
             .reprompt(orderNotDeletedResponse)
+            .withSimpleCard(APP_NAME, orderNotDeletedResponse)
             .getResponse();
         })
     }
