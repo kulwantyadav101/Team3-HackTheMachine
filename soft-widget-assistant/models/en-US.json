@@ -132,6 +132,16 @@
             "modify my order for widget pro",
             "edit my order for widget pro"
           ]
+        },
+        {
+          "name": "ProductInformationIntent",
+          "slots": [],
+          "samples": [
+              "tell me more about widget pro",
+              "tell me more fucntionalities of produts",
+              "give me more details of product",
+              "tell me more about product"
+          ]
         }
       ],
       "types": []
