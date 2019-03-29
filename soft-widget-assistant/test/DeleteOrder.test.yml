@@ -1,0 +1,10 @@
+---
+configuration:
+ locales: en-US
+
+---
+---
+- test: Launch the test for Delete order skill without utterances
+- DeleteOrderIntent
+- response.outputspeech.ssml: "There is no existing order to delete."
+---
