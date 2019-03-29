@@ -141,12 +141,25 @@
         },
         {
           "name": "ProductInformationIntent",
-          "slots": [],
+          "slots": [
+            {
+              "name": "know",
+              "type": "Knowledge"
+            },
+            {
+              "name": "I_Want",
+              "type": "iSubjectType"
+            },
+            {
+              "name": "productName",
+              "type": "ProductType"
+            }
+          ],
           "samples": [
-              "tell me more about widget pro",
-              "tell me more fucntionalities of produts",
-              "give me more details of product",
-              "tell me more about product"
+            "{I_Want} {know} of {productName}",
+            "{I_Want} {know} product",
+            "{I_Want} {know} ",
+            "{I_Want} {know} {productName}"
           ]
         }
       ],
@@ -154,6 +167,21 @@
         {
           "name": "iSubjectType",
           "values": [
+            {
+              "name": {
+                "value": "give me"
+              }
+            },
+            {
+              "name": {
+                "value": "tell me more"
+              }
+            },
+            {
+              "name": {
+                "value": "tell me"
+              }
+            },
             {
               "name": {
                 "value": "i'd like to"
@@ -202,6 +230,66 @@
             {
               "name": {
                 "value": "a"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Knowledge",
+          "values": [
+            {
+              "name": {
+                "value": "more details about"
+              }
+            },
+            {
+              "name": {
+                "value": "details about"
+              }
+            },
+            {
+              "name": {
+                "value": "details of"
+              }
+            },
+            {
+              "name": {
+                "value": "more about"
+              }
+            },
+            {
+              "name": {
+                "value": "about functionalities of"
+              }
+            },
+            {
+              "name": {
+                "value": "about"
+              }
+            },
+            {
+              "name": {
+                "value": "know more about"
+              }
+            },
+            {
+              "name": {
+                "value": "to know about"
+              }
+            },
+            {
+              "name": {
+                "value": "know about"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ProductType",
+          "values": [
+            {
+              "name": {
+                "value": "Widget Pro"
               }
             }
           ]
