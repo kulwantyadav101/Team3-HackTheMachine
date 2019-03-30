@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "SoftWidget",
+      "invocationName": "soft widget",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
