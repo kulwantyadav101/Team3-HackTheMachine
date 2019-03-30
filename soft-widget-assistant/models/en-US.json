@@ -136,7 +136,8 @@
             "{I_Want} modify order",
             "{I_Want} edit order",
             "edit order",
-            "modiy order"
+            "modiy order",
+            "manage order"
           ]
         },
         {
@@ -410,7 +411,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Your shipping address is {street} ,  {city} ,  {state} , {zip} . Your order total is fifty dollars. Do you confirm this order?"
+            "value": "Your shipping address is {street} ,  {city} ,  {state} , {zip} . Do you confirm this order?"
           }
         ]
       },
@@ -455,7 +456,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Please select a product. Currently you can only purchase widget pro."
+            "value": "Please say product name you want to order. You can say 'widget pro'."
           }
         ]
       },
@@ -485,7 +486,7 @@
           },
           {
             "type": "PlainText",
-            "value": "Please provide your street address to place this order."
+            "value": "Where do you want us to ship this product? Please start with street address."
           }
         ]
       },
@@ -494,7 +495,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "City name"
+            "value": "tell us your city name"
           }
         ]
       },
@@ -503,7 +504,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "State name"
+            "value": "your state name"
           }
         ]
       },
@@ -512,7 +513,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Five digit postal code"
+            "value": "and Five digit zip code"
           }
         ]
       },

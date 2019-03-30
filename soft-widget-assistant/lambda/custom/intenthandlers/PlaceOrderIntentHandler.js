@@ -52,10 +52,9 @@ const PlaceOrderIntentHandler = {
         return db.addOrder(userID, product, userInfo, shippingAddress)
           .then((data) => {
             console.log('Order saved successfully', data)
-            const orderSuccessfulResponse = 'The order has been placed successfully.';
+            const orderSuccessfulResponse = 'The order has been placed successfully. We will send you tracking information as soon as it ships.';
             return responseBuilder
               .speak(orderSuccessfulResponse)
-              .reprompt(orderSuccessfulResponse)
               .getResponse();
           })
           .catch((err) => {
