@@ -411,7 +411,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Your shipping address is {street} ,  {city} ,  {state} , {zip} . Your order total is fifty dollars. Do you confirm this order?"
+            "value": "Your shipping address is {street} ,  {city} ,  {state} , {zip} . Do you confirm this order?"
           }
         ]
       },
@@ -456,7 +456,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Please say product name to order. You can say 'widget pro'."
+            "value": "Please say product name you want to order. You can say 'widget pro'."
           }
         ]
       },
@@ -486,7 +486,7 @@
           },
           {
             "type": "PlainText",
-            "value": "Where do you want us to ship this product? Say your street address."
+            "value": "Where do you want us to ship this product? Please start with street address."
           }
         ]
       },
@@ -495,7 +495,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Say your city name"
+            "value": "tell us your city name"
           }
         ]
       },
@@ -504,7 +504,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "State name"
+            "value": "your state name"
           }
         ]
       },
@@ -513,7 +513,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "and Five digit postal code"
+            "value": "and Five digit zip code"
           }
         ]
       },
