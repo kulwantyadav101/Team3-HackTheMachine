@@ -1,0 +1,16 @@
+---
+configuration:
+ locales: en-US
+
+---
+
+---
+- test: Launch test for Amazon help skill
+- AMAZON.HelpIntent: "You can say hello to me!"
+---
+
+---
+- test: Launch test for Amazon Help skill with utterances
+- AMAZON.HelpIntent
+- prompt: "You need any help?"
+---

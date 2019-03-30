@@ -1,0 +1,531 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "soft widget",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "PlaceOrderIntent",
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.Service",
+              "samples": [
+                "place an order for {product} ",
+                "purchase {product}",
+                "buy {product}",
+                "{product}"
+              ]
+            },
+            {
+              "name": "street",
+              "type": "AMAZON.StreetAddress"
+            },
+            {
+              "name": "city",
+              "type": "AMAZON.US_CITY",
+              "samples": [
+                "city is {city}",
+                "{city}"
+              ]
+            },
+            {
+              "name": "state",
+              "type": "AMAZON.US_STATE",
+              "samples": [
+                "state is {state}",
+                "state name is {state}",
+                "{state}"
+              ]
+            },
+            {
+              "name": "zip",
+              "type": "AMAZON.PostalAddress",
+              "samples": [
+                "zip is {zip}",
+                "zip code is {zip}",
+                "Postal address is {zip}",
+                "{zip}"
+              ]
+            },
+            {
+              "name": "I_Want",
+              "type": "iSubjectType"
+            },
+            {
+              "name": "article",
+              "type": "ArticleType"
+            }
+          ],
+          "samples": [
+            "{I_Want} create order",
+            "{I_Want} place order",
+            "{I_Want} create {article} order",
+            "{I_Want} place {article} order",
+            "create order",
+            "place order",
+            "create {article} order",
+            "place {article} order",
+            "place order {article} {product}",
+            "place {article} order {article} {product}",
+            "purchase {product}",
+            "order {product}",
+            "buy {product}",
+            "{I_Want} order {product}",
+            "{I_Want} create {article} order {article} {product}",
+            "{I_Want} place {article} order {article} {product}",
+            "{I_Want} purchase {product}",
+            "{I_Want} buy {product}"
+          ]
+        },
+        {
+          "name": "DeleteOrderIntent",
+          "slots": [
+            {
+              "name": "I_Want",
+              "type": "iSubjectType"
+            },
+            {
+              "name": "article",
+              "type": "ArticleType"
+            }
+          ],
+          "samples": [
+            "cancel {article} order",
+            "delete {article} order",
+            "{I_Want} delete {article} last order",
+            "{I_Want} cancel {article} last order",
+            "{I_Want} cancel {article} order",
+            "{I_Want} delete {article} order",
+            "delete order",
+            "cancel order"
+          ]
+        },
+        {
+          "name": "EditOrderIntent",
+          "slots": [
+            {
+              "name": "I_Want",
+              "type": "iSubjectType"
+            },
+            {
+              "name": "article",
+              "type": "ArticleType"
+            }
+          ],
+          "samples": [
+            "modify {article} order",
+            "edit {article} order",
+            "{I_Want} modify {article} order",
+            "{I_Want} edit {article} order",
+            "{I_Want} modify order",
+            "{I_Want} edit order",
+            "edit order",
+            "modiy order",
+            "manage order"
+          ]
+        },
+        {
+          "name": "ProductInformationIntent",
+          "slots": [
+            {
+              "name": "know",
+              "type": "Knowledge"
+            },
+            {
+              "name": "I_Want",
+              "type": "iSubjectType"
+            },
+            {
+              "name": "productName",
+              "type": "ProductType"
+            }
+          ],
+          "samples": [
+            "{I_Want} {know} of {productName}",
+            "{I_Want} {know} product",
+            "{I_Want} {know} ",
+            "{I_Want} {know} {productName}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "iSubjectType",
+          "values": [
+            {
+              "name": {
+                "value": "give me"
+              }
+            },
+            {
+              "name": {
+                "value": "tell me more"
+              }
+            },
+            {
+              "name": {
+                "value": "tell me"
+              }
+            },
+            {
+              "name": {
+                "value": "i'd like to"
+              }
+            },
+            {
+              "name": {
+                "value": "I would like to"
+              }
+            },
+            {
+              "name": {
+                "value": "I want to"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ArticleType",
+          "values": [
+            {
+              "name": {
+                "value": "my"
+              }
+            },
+            {
+              "name": {
+                "value": "of"
+              }
+            },
+            {
+              "name": {
+                "value": "for"
+              }
+            },
+            {
+              "name": {
+                "value": "the"
+              }
+            },
+            {
+              "name": {
+                "value": "an "
+              }
+            },
+            {
+              "name": {
+                "value": "a"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Knowledge",
+          "values": [
+            {
+              "name": {
+                "value": "more details about"
+              }
+            },
+            {
+              "name": {
+                "value": "details about"
+              }
+            },
+            {
+              "name": {
+                "value": "details of"
+              }
+            },
+            {
+              "name": {
+                "value": "more about"
+              }
+            },
+            {
+              "name": {
+                "value": "about functionalities of"
+              }
+            },
+            {
+              "name": {
+                "value": "about"
+              }
+            },
+            {
+              "name": {
+                "value": "know more about"
+              }
+            },
+            {
+              "name": {
+                "value": "to know about"
+              }
+            },
+            {
+              "name": {
+                "value": "know about"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ProductType",
+          "values": [
+            {
+              "name": {
+                "value": "Widget Pro"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "PlaceOrderIntent",
+          "delegationStrategy": "ALWAYS",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.954754135068"
+          },
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.Service",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.189056022034.1163057285918"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.189056022034.1163057285918.1426029678432",
+                  "values": [
+                    "widget",
+                    "widget pro",
+                    "Widget Pro"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "street",
+              "type": "AMAZON.StreetAddress",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.440835757192.882190578458"
+              }
+            },
+            {
+              "name": "city",
+              "type": "AMAZON.US_CITY",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.440835757192.27596837220"
+              }
+            },
+            {
+              "name": "state",
+              "type": "AMAZON.US_STATE",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.440835757192.1196343283002"
+              }
+            },
+            {
+              "name": "zip",
+              "type": "AMAZON.PostalAddress",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.440835757192.311206759712"
+              }
+            },
+            {
+              "name": "I_Want",
+              "type": "iSubjectType",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "article",
+              "type": "ArticleType",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "DeleteOrderIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.716768606814"
+          },
+          "slots": [
+            {
+              "name": "I_Want",
+              "type": "iSubjectType",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "article",
+              "type": "ArticleType",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.954754135068",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Your shipping address is {street} ,  {city} ,  {state} , {zip} . Do you confirm this order?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.69702743025.1517683176436",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please provide your street address to place this order."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.370680863012.1439544543604",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "City name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.370680863012.394646808361",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "State name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.370680863012.222407886769",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Five digit postal code"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.189056022034.1163057285918",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please say product name you want to order. You can say 'widget pro'."
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.189056022034.1163057285918.1426029678432",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please specify a valid product. You can only purchase Widget Pro at the moment."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.440835757192.882190578458",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I live at {street}"
+          },
+          {
+            "type": "PlainText",
+            "value": "street name is {street}"
+          },
+          {
+            "type": "PlainText",
+            "value": "{street}"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where do you want us to ship this product? Please start with street address."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.440835757192.27596837220",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "tell us your city name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.440835757192.1196343283002",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "your state name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.440835757192.311206759712",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "and Five digit zip code"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.716768606814",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure you want to cancel the last order?"
+          }
+        ]
+      }
+    ]
+  }
+}

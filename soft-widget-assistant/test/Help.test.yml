@@ -1,0 +1,16 @@
+---
+configuration:
+ locales: en-US
+
+---
+
+---
+- test: Launch test for Amazon help skill
+- AMAZON.HelpIntent: "There is no existing order to modify."
+---
+
+---
+- test: Launch test for Amazon Help skill with utterances
+- AMAZON.HelpIntent
+- prompt: "You need any help?"
+---

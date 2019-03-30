@@ -1,0 +1,54 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "A smart assistant for Soft Widget Incorporated to place or manage orders",
+          "examplePhrases": [
+            "Alexa open soft widget",
+            "Alexa launch soft widget",
+            "Alexa ask soft widget to tell me more about Widget Pro"
+          ],
+          "name": "Soft Widget Assistant",
+          "description": "A smart assistant for Soft Widget Incorporated to place or manage orders",
+          "smallIconUri": "https://s3.amazonaws.com/cdn.dabblelab.com/img/skill-template-default-sm.png",
+          "largeIconUri": "https://s3.amazonaws.com/cdn.dabblelab.com/img/skill-template-default-lg.png"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Sample Testing Instructions.",
+      "category": "SHOPPING",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/custom",
+          "uri": "ask-custom-soft-widget-assistant-default"
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {
+          "termsOfUseUrl": "http://example.com/terms",
+          "privacyPolicyUrl": "http://example.com/privacy"
+        }
+      },
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    },
+    "permissions": [
+      {
+        "name": "alexa::profile:email:read"
+      },
+      {
+        "name": "alexa::profile:name:read"
+      }
+    ]
+  }
+}
