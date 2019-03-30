@@ -10,10 +10,10 @@ const ProductInformationIntentHandler = {
     handle(handlerInput) {
       const speechText = `
         Widget Pro a revolutionary house-hold product everyone wants. 
-        It features a sleek casing with intuitive features. Features include.
+        It comes with sleek casing elegant design with intuitive features to use, such as
         Rock-solid audio engagement.
         Silver-bullet touch response system.
-        Long lasting rechargeable battery.
+        and Long lasting rechargeable battery.
       `;
   
       return handlerInput.responseBuilder

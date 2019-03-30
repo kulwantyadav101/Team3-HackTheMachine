@@ -5,9 +5,9 @@
         "en-US": {
           "summary": "A smart assistant for Soft Widget Incorporated to place or manage orders",
           "examplePhrases": [
-            "Alexa open soft widget assistant",
-            "Alexa launch soft widget assistant",
-            "Alexa ask soft widget assistant to tell me more about Widget Pro"
+            "Alexa open soft widget",
+            "Alexa launch soft widget",
+            "Alexa ask soft widget to tell me more about Widget Pro"
           ],
           "name": "Soft Widget Assistant",
           "description": "A smart assistant for Soft Widget Incorporated to place or manage orders",

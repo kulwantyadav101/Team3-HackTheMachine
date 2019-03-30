@@ -136,7 +136,8 @@
             "{I_Want} modify order",
             "{I_Want} edit order",
             "edit order",
-            "modiy order"
+            "modiy order",
+            "manage order"
           ]
         },
         {
@@ -455,7 +456,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Please select a product. Currently you can only purchase widget pro."
+            "value": "Please say product name to order. You can say 'widget pro'."
           }
         ]
       },
@@ -485,7 +486,7 @@
           },
           {
             "type": "PlainText",
-            "value": "Please provide your street address to place this order."
+            "value": "Where do you want us to ship this product? Say your street address."
           }
         ]
       },
@@ -494,7 +495,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "City name"
+            "value": "Say your city name"
           }
         ]
       },
@@ -512,7 +513,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Five digit postal code"
+            "value": "and Five digit postal code"
           }
         ]
       },

@@ -28,7 +28,6 @@ const EditOrderIntentHandler = {
         }
         return responseBuilder
           .speak(editOrderResponse)
-          .reprompt(editOrderResponse)
           .withSimpleCard(APP_NAME, editOrderResponse)
           .getResponse();
       })
